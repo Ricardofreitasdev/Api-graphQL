@@ -1,0 +1,22 @@
+type User {
+  id: Int
+  email: String
+  password: String
+  name: String
+  token: String
+}
+
+type Query {
+  user(token: String): User!
+}
+
+type Mutation {
+  createUser(
+    email: String
+    password: String
+    name: String
+    token: String
+  ): User!
+
+  valid(email: String, password: String): User!
+}
